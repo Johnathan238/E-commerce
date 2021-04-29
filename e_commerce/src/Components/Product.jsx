@@ -12,7 +12,12 @@ export const Product = () => {
                 <div className={classes.CardContent}>
                     <Typography variant="h5" gutterBottom>
                         {Product.name}
-                    </Typography>
+            </Typography>
+            
+            <Typography variant="h5" gutterBottom>
+                        {Product.name}
+            </Typography>
+            
                 </div>
             </CardContent>
 
