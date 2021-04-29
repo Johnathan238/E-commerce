@@ -3,7 +3,7 @@ import { Card,  CardMedia, CardContent, CardActions, Typography, IconButton } fr
 import { AddShoppingCart } from '@material-ui/icons'
 import classes from '*.module.css'
 
-export const Product = () => {
+export const Product = ({ product }) => {
     return (
         <Card className={classes.root}>
             <CardMedia className={classes.media} image='' title={Product.name} />
@@ -13,12 +13,17 @@ export const Product = () => {
                     <Typography variant="h5" gutterBottom>
                         {Product.name}
             </Typography>
-            
-            <Typography variant="h5" gutterBottom>
-                        {Product.name}
+
+            <Typography variant="h5">
+                        {Product.price}
             </Typography>
             
-                </div>
+          </div>
+          
+          <Typography variant="h5">
+                        {Product.description}
+          </Typography>
+          
             </CardContent>
 
         </Card>
