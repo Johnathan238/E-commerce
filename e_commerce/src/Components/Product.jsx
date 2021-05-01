@@ -20,12 +20,18 @@ export const Product = ({ product }) => {
             
           </div>
           
-          <Typography variant="h5">
+          <Typography variant="h2" color="textSecondary">
                         {Product.description}
           </Typography>
-          
+
             </CardContent>
 
+            <CardActions disableSpacing className={classes.CardActions}>
+                <IconButton aria-label="Add to Cart"></IconButton>
+                <AddShoppingCart />
+            </CardActions>
+
         </Card>
+
     )
 }
