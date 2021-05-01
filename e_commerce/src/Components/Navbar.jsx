@@ -1,10 +1,12 @@
 import React from 'react'
-import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography }
+import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography } from '@material-ui/core'
 import { ShoppingCart } from '@material-ui/icons'
-import classes from '*.module.css'
+// import classes from '*.module.css'
 import logo from '../assets/I AM PRODIGY FITNESS Logo.png'
+import useStyle from './Navstyle'
 
 const Navbar = () => {
+    const classes = useStyle()
     return (
         <div>
             <AppBar position="fixed" className={classes.AppBar} color="inherit">

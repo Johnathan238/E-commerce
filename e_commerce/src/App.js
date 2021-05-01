@@ -1,14 +1,15 @@
 import './App.css';
-import Products from './Components/Products'
+import { Products, Navbar } from './Components'
 
 function App() {
   return (
     <div className="App">
 
-      <header className="App-header">
+      {/* <header className="App-header">
         E-Commerce
-      </header>
+      </header> */}
       
+      <Navbar />
       <Products />
 
       {/* <video>
