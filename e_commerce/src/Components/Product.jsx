@@ -8,22 +8,22 @@ const Product = ({ product }) => {
 
     return (
         <Card className={classes.root}>
-            <CardMedia className={classes.media} image='' title={Product.name} />
+            <CardMedia className={classes.media} image={product.image} title={Product.name} />
 
             <CardContent>
                 <div className={classes.CardContent}>
                     <Typography variant="h5" gutterBottom>
-                        {Product.name}
+                        {product.name}
             </Typography>
 
             <Typography variant="h5">
-                        {Product.price}
+                        {product.price}
             </Typography>
             
           </div>
           
-          <Typography variant="h2" color="textSecondary">
-                        {Product.description}
+          <Typography variant="body2" color="textSecondary">
+                        {product.description}
           </Typography>
 
             </CardContent>
