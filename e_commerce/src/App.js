@@ -1,4 +1,5 @@
 import './App.css';
+import Products from './Components/Products'
 
 function App() {
   return (
@@ -7,6 +8,8 @@ function App() {
       <header className="App-header">
         E-Commerce
       </header>
+      
+      <Products />
 
       {/* <video>
         <source src="https://youtu.be/CWD56bQOxKM" type="video/mp4">
