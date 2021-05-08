@@ -28,7 +28,7 @@ const App = () => {
       </header>
       
       <Navbar />
-      <Products />
+      <Products products={products}/>
 
       {/* <video>
         <source src="https://youtu.be/CWD56bQOxKM" type="video/mp4">
