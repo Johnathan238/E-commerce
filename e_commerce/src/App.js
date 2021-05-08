@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { commerce } from './library/commerce'
 import { Products, Navbar } from './Components'
 import './App.css';
-import reactDom from 'react-dom';
+// import reactDom from 'react-dom';
 
 const App = () => {
   const [products, setProducts] = useState([])
