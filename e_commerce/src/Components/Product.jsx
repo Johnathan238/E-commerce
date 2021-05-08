@@ -22,9 +22,8 @@ const Product = ({ product }) => {
             
           </div>
           
-          <Typography variant="body2" color="textSecondary">
-                        {product.description}
-          </Typography>
+          <Typography dangerouslySetInnerHTML={{ __html: product.description }} variant="body2" color="textSecondary"
+          />
 
             </CardContent>
 
