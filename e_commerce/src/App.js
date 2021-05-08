@@ -23,9 +23,9 @@ const App = () => {
   return (
     <div className="App">
 
-      {/* <header className="App-header">
+      <header className="App-header">
         E-Commerce
-      </header> */}
+      </header>
       
       <Navbar />
       <Products />
