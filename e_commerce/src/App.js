@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { commerce } from './library/commerce'
-import { Products, Navbar } from './Components'
+import { Products, Navbar, Cart } from './Components'
 import './App.css';
 // import reactDom from 'react-dom';
 
@@ -40,7 +40,8 @@ const App = () => {
       </header>
       
       <Navbar totalItems={cart.total_items}/>
-      <Products products={products} onAddToCart={handleAddToCart} />
+      {/* <Products products={products} onAddToCart={handleAddToCart} /> */}
+      <Cart cart={cart} />
 
       {/* <video>
         <source src="https://youtu.be/CWD56bQOxKM" type="video/mp4">
