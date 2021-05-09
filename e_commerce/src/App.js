@@ -32,10 +32,6 @@ const App = () => {
 
   console.log(cart)
 
-  console.log(products)
-
-
-
   return (
     <div className="App">
 
@@ -43,7 +39,7 @@ const App = () => {
         E-Commerce
       </header>
       
-      <Navbar />
+      <Navbar totalItems={cart.total_items}/>
       <Products products={products} onAddToCart={handleAddToCart} />
 
       {/* <video>
