@@ -1,9 +1,10 @@
 import React from 'react'
 import { Container, Typography, Button, Grid } from '@material-ui/core'
 import useStyle from './styles'
+// import CartItem from './'
 
 const Cart = ({ cart }) => {
-    const isEmpty = cart.line_items.length === 0;
+    const isEmpty = !cart.line_items.length;
     const classes = useStyle()
 
     const EmptyCart = () => {
@@ -14,9 +15,8 @@ const Cart = ({ cart }) => {
         <>
         <Grid container spacing={3}>
             {cart.line_items.map((item) => (
-                <Grid item xs={12} sm={4} key={item.id}>
-                <>{item.name}<>
-                    
+            <Grid item xs={12} sm={4} key={item.id}>
+            <div>{item.name} </div>
                 </Grid>
             ))}
         </Grid>
@@ -33,6 +33,9 @@ const Cart = ({ cart }) => {
         </div>
         </>
     }
+
+    if(!cart.line_items) return 'Loading... ';
+
     return (
         <Container>
             <div className={classes.toolbar} />
