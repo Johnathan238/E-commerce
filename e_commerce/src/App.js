@@ -18,7 +18,7 @@ const App = () => {
     setCart(await commerce.cart.retrieve())
   }
 
-  const addToCart = async (productId, quantity) => {
+  const handleAddToCart = async (productId, quantity) => {
     const item = await commerce.cart.add(productId, quantity)
 
     setCart(item.cart)
@@ -44,7 +44,7 @@ const App = () => {
       </header>
       
       <Navbar />
-      <Products products={products}/>
+      <Products products={products} onAddToCart={handleAddToCart} />
 
       {/* <video>
         <source src="https://youtu.be/CWD56bQOxKM" type="video/mp4">
