@@ -11,7 +11,21 @@ const Cart = ({ cart }) => {
 
     const FilledCart = () => {
         <>
-        <Grid container spacing={3}></Grid>
+        <Grid container spacing={3}>
+            {cart.line_items((item) => (
+                <Grid item xs={12} sm={4} key={item.id}>
+                    <div>{item.name}</div>
+                    
+                </Grid>
+            ))}
+        </Grid>
+
+        <div className={classes.cardDetails}>
+            <Typography>
+                Subtotal: {cart.subtotal}
+            </Typography>
+
+        </div>
         </>
     }
     return (
