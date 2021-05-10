@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Typography, Button, Grid } from '@material-ui/core'
 import useStyle from './styles'
 import CartItem from './CartItem'
-// import CartItem from './'
+
 
 const Cart = ({ cart }) => {
     const isEmpty = !cart.line_items.length;
