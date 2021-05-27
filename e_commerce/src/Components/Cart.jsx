@@ -10,8 +10,8 @@ const Cart = ({ cart }) => {
 
     const EmptyCart = () => (
         <Typography variant="subtitle2">No items in your shopping cart!
-            <Link to="/products">
-                Start adding some
+            <Link to="/products"className={classes.link}>
+            Add a Plan to the cart!
             </Link>
         </Typography>
     )
