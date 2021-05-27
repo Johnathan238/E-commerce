@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { commerce } from './library/commerce'
 import { Products, Navbar, Cart } from './Components'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css';
 // import reactDom from 'react-dom';
 
@@ -33,6 +34,8 @@ const App = () => {
   console.log(cart)
 
   return (
+    <Router>
+
     <div className="App">
 
       <header className="App-header">
@@ -40,13 +43,15 @@ const App = () => {
       </header>
       
       <Navbar totalItems={cart.total_items}/>
-      {/* <Products products={products} onAddToCart={handleAddToCart} /> */}
+      <Products products={products} onAddToCart={handleAddToCart} />
       <Cart cart={cart} />
 
       {/* <video>
         <source src="https://youtu.be/CWD56bQOxKM" type="video/mp4">
       </video> */}
     </div>
+
+    </Router>
   );
 }
 
