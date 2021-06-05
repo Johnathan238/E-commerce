@@ -3,7 +3,7 @@ import { commerce } from './library/commerce'
 import { Products, Navbar, Cart, Checkout } from './Components'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css';
-import { Checkout } from '@chec/commerce.js/features/checkout';
+// import { Checkout } from '@chec/commerce.js/features/checkout';
 // import reactDom from 'react-dom';
 
 const App = () => {
