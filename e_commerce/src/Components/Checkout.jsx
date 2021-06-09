@@ -23,6 +23,7 @@ const Checkout = () => {
               </Step>
             ))}
           </Stepper>
+          { activeStep === steps.length ? <Confirm /> : <Form /> }
         </Paper>
 
       </main>
