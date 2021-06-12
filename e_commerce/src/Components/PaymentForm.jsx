@@ -6,7 +6,7 @@ import Review from './Review'
 
 const stripePromise = loadStripe('...')
 
-const PaymentForm = ({ checkoutToken }) => {
+const PaymentForm = ({ checkoutToken, backStep }) => {
   return (
     <>
       <Review checkoutToken={checkoutToken} />
@@ -19,7 +19,7 @@ const PaymentForm = ({ checkoutToken }) => {
               <CardElement />
               <br /><br />
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Button variant="outlined"> Back </Button>
+                <Button variant="outlined" onClick={backStep}> Back </Button>
 
                 <Button
                   type="submit"

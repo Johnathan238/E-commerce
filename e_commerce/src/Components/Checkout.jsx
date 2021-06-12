@@ -6,6 +6,9 @@ import PaymentForm from './PaymentForm'
 
 const steps = ['Payment Details', 'Confim!']
 
+const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1);
+const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1);
+
 const Checkout = () => {
 
   const [activeStep, setActiveStep] = useState(1)
@@ -17,7 +20,10 @@ const Checkout = () => {
     </>
   )
   
-  const Form = () => activeStep == 1 ? <PaymentForm /> : <Confirm />
+  const Form = () => activeStep == 1
+    ? <PaymentForm checkoutToken={checkoutToken} nextStep={nextStep} />
+    : <Confirm checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} />
+  
   return (
     <>
       <div className={classes.toolbar} />
