@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { CssBaseline, Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider, Button } from '@material-ui/core';
 import useStyles from './Checkoutstyles'
 import AddressForm from './AddressForm'
@@ -14,13 +14,17 @@ const Checkout = () => {
   const [activeStep, setActiveStep] = useState(0)
   const classes = useStyles()
 
+  useEffect(() => {
+    
+  }, [])
+
   const Confirm = () => (
     <>
      Confirm! 
     </>
   )
   
-  const Form = () => activeStep == 1 ? <AddressForm  /> : <PaymentForm />
+  const Form = () => activeStep === 0 ? <AddressForm  /> : <PaymentForm />
   
   return (
     <>

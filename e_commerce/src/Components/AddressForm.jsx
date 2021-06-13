@@ -11,7 +11,9 @@ const AddressForm = () => {
     const [shippingCountries, setShippingCountries] = useState([])
 
     const fetchShippingCountires = async (checkoutTokenId) => {
-        const response = await commerce.services.localeListShippingCountries(checkoutTokenId)
+        const { countries } = await commerce.services.localeListShippingCountries(checkoutTokenId)
+
+        setShippingCountries(countries)
     }
 
   return (
