@@ -1,17 +1,17 @@
 import React, {useState} from 'react'
 import { CssBaseline, Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider, Button } from '@material-ui/core';
 import useStyles from './Checkoutstyles'
-// import AddressForm from './AddressForm'
+import AddressForm from './AddressForm'
 import PaymentForm from './PaymentForm'
 
 const steps = ['Payment Details', 'Confim!']
 
-const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1);
-const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1);
+// const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1);
+// const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1);
 
 const Checkout = () => {
 
-  const [activeStep, setActiveStep] = useState(1)
+  const [activeStep, setActiveStep] = useState(0)
   const classes = useStyles()
 
   const Confirm = () => (
@@ -20,9 +20,7 @@ const Checkout = () => {
     </>
   )
   
-  const Form = () => activeStep == 1
-    ? <PaymentForm checkoutToken={checkoutToken} nextStep={nextStep} />
-    : <Confirm checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} />
+  const Form = () => activeStep == 1 ? <AddressForm  /> : <PaymentForm />
   
   return (
     <>
