@@ -9,12 +9,14 @@ import { commerce } from '../library/commerce'
 const AddressForm = ({ checkoutToken }) => {
     const methods = useForm()
     const [shippingCountries, setShippingCountries] = useState([])
+    const [shippingCountry, setShippingCountry] = useState('')
 
     const fetchShippingCountires = async (checkoutTokenId) => {
         const { countries } = await commerce.services.localeListShippingCountries(checkoutTokenId)
 
         console.log(countries);
         setShippingCountries(countries)
+        setShippingCountry(Object.keys(countries)[0])
     }
 
     useEffect(() => {
@@ -33,6 +35,16 @@ const AddressForm = ({ checkoutToken }) => {
                     <FormInput require name="Email" label="Email"/>
                     <FormInput require name="City" label="City"/>
                     <FormInput require name="ZIP" label="ZIP / Postal Code"/>
+                        <Grid item xs={12} sm={6}>
+                            <InputLabel>Shipping Country</InputLabel>
+                                <Select value={shippingCountry} fullWidth onChange={(e) => setShippingCountry(e.target.value)}>
+                                {Object.entries(shippingCountries).map(([code, name]) => ({ id: code, label: name })).map((item) => (
+                                <MenuItem key={item.id} value={item.id}>
+                                {item.label}
+                                </MenuItem>
+                            ))}
+                            </Select>
+                        </Grid>
                 </Grid>
             </form>
         </FormProvider>
