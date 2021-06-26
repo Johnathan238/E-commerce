@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { commerce } from '../library/commerce'
+import {  useHistory } from 'react-router-dom';
 import { CssBaseline, Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider, Button } from '@material-ui/core';
 import useStyles from './Checkoutstyles'
 import AddressForm from './AddressForm'
@@ -15,21 +16,23 @@ const Checkout = ({cart}) => {
   const [activeStep, setActiveStep] = useState(0)
   const [checkoutToken, setCheckoutToken] = useState(null)
   const classes = useStyles()
+  const history = useHistory();
 
   useEffect(() => {
-    const generateToken = async () => {
-      try {
-        const token = await commerce.checkout.generateToken(cart.id, {type: 'cart'})
+    if (cart.id) {
+      const generateToken = async () => {
+        try {
+          const token = await commerce.checkout.generateToken(cart.id, { type: 'cart' });
 
-        console.log(token);
-        setCheckoutToken(token)
-      } catch (error) {
+          setCheckoutToken(token);
+        } catch {
+          if (activeStep !== steps.length) history.push('/');
+        }
+      };
 
-      }
+      generateToken();
     }
-
-    generateToken()
-  }, [cart])
+  }, [cart]);
 
   const Confirm = () => (
     <>
