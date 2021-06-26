@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { commerce } from './library/commerce'
-import { Products, Navbar, Cart, Checkout } from './Components'
+import { Cart } from '../src/Components/Cart/Cart'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css';
 // import { Checkout } from '@chec/commerce.js/features/checkout';

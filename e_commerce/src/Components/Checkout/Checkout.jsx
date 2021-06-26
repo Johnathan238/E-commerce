@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import { commerce } from '../library/commerce'
+import { commerce } from '../../library/commerce'
 import {  useHistory } from 'react-router-dom';
 import { CssBaseline, Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider, Button } from '@material-ui/core';
 import useStyles from './Checkoutstyles'
 import AddressForm from './AddressForm'
-import PaymentForm from './PaymentForm'
+import PaymentForm from '../PaymentForm'
 
 const steps = ['Payment Details', 'Confim!']
 

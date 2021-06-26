@@ -16,7 +16,7 @@
     "js-length": "^1.0.22",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-hook-form": "^7.2.2",
+    "react-hook-form": "^7.9.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "string-length": "^4.0.2",

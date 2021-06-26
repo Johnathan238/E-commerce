@@ -1,8 +1,8 @@
 import React from 'react'
 import { Container, Typography, Button, Grid } from '@material-ui/core'
 import { Link } from 'react-router-dom'
-import useStyles from './styles'
-import CartItem from './CartItem'
+import useStyles from '../Product/styles'
+import CartItem from '../CartItem'
 
 const Cart = ({ cart , handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart}) => {
     // const isEmpty = !cart.line_items.length;
