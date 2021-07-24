@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 import { CssBaseline } from '@material-ui/core';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
-import { Navbar, Products, Cart, Checkout } from './components';
-import { commerce } from './lib/commerce';
+import { commerce } from './library/commerce'
+import { Products, Checkout, Navbar, Cart } from '../src/Components/index'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import './App.css';
+// import { Checkout } from '@chec/commerce.js/features/checkout';
+// import reactDom from 'react-dom';
 
 const App = () => {
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+const [mobileOpen, setMobileOpen] = React.useState(false);
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
   const [order, setOrder] = useState({});

@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { InputLabel, Select, MenuItem, Button, Grid, Typography } from '@material-ui/core';
-import { useForm, FormProvider } from 'react-hook-form';
+import React, { useState, useEffect } from 'react'
+import { InputLabel, Select, MenuItem, Button, Grid, Typography } from '@material-ui/core'
+import { useForm, FormProvider } from 'react-hook-form'
+import FormInput from './FormInput'
+import { commerce } from '../../library/commerce'
 import { Link } from 'react-router-dom';
 
-import { commerce } from '../../lib/commerce';
-import FormInput from './CustomTextField';
+
 
 const AddressForm = ({ checkoutToken, test }) => {
   const [shippingCountries, setShippingCountries] = useState([]);
